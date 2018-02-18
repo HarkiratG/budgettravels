@@ -116,6 +116,6 @@ Template.schedule.events({
 
     },
     'click .generateSchedule': function(event){
-        
+
     }
 });
