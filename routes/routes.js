@@ -6,9 +6,9 @@ Router.map(function(){
         template: 'main'
     });
 
-    this.route('cityAttraction', {
+    this.route('cityAttractions', {
         path: '/cityAttraction/:_id',
-        template: 'cityAttraction'
+        template: 'cityAttractions'
     });
 
 });

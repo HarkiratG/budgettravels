@@ -9,7 +9,7 @@ Meteor.startup(() => {
     //populate cities db
 
 
-   getCities();
+  // getCities();
 });
 
 
