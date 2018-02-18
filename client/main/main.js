@@ -24,6 +24,16 @@ Template.main.events({
     // increment the counter when button is clicked
     Session.set("tmp",Session.get("tmp") + 1);
   },
+    'click #fbLoginBtn'(event){
+        event.preventDefault();
+        Meteor.loginWithFacebook({
+            requestPermission:['public_profile', 'email']}, function(err){
+                if(err){
+                    console.log("something went wrong with facebook login at line 32");
+                }
+            });
+    }
+
 });
 
 Template.cityAttractions.helpers({
