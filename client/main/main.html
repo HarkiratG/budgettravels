@@ -6,8 +6,6 @@
 
 
 
-
-
 </body>
 
 <template name="main">
@@ -97,7 +95,7 @@
 
 <template name="cityBlock">
 
-    <a href = "{{pathFor route='cityAttractions' _id=this.cityId }}" class="list-group-item" style="margin-top: 5px; margin-bottom: 5px; cursor: pointer">
+    <a href = "{{pathFor route='cityAttractions' _id=this._id }}" class="list-group-item" style="margin-top: 5px; margin-bottom: 5px; cursor: pointer">
         <h4 class="list-group-item-heading">{{name}}</h4>
         <p class="list-group-item-text">{{country}}</p>
         <img src="{{url}}"  style="float: right; margin-top: -50px" width="60px">
@@ -107,6 +105,27 @@
 
 <template name="cityAttractions">
 
-    
+    <img src="{{getbgurl}}" class = "caimg">
+    <div class="box animated slideInLeft">
+        <h2 style="margin-left: 20px; color: gray; font-size: 50px">{{getcity}}</h2>
+        <hr>
+        <p style="margin-left: 20px; color:gray; font-size:18px">Listing all attractions</p><br><br>
+        <div class="text-center">
+             <i class="fa fa-home fa-2x" style="cursor: pointer; padding-right: 20px"></i>
+            <i class="fa fa-star fa-2x" style="cursor: pointer; padding-right: 20px" ></i>
+            <i class="fa fa-user-circle fa-2x" style="cursor: pointer" ></i>
+        </div>
+    </div>
 
+    <div class="container" style="padding-top: 50px; font-size: 20px">
+        <p>  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+            McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going thro
+            ugh the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum
+            " (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Ren
+            aissance. The first line of Lorem Ipsum, "</p>
+    </div>
 </template>

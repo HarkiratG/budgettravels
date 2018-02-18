@@ -21,6 +21,12 @@
 
 }
 
+.caimg{
+
+    object-fit: fill;
+    width: 100%;
+
+}
 .navbar {
     min-height: 80px;
     background: transparent;
@@ -40,6 +46,27 @@
     padding: 9px 10px !important;
 }
 
+.box{
+
+    position: absolute;
+    top: 130px;
+
+    opacity: 0.7;
+    filter: alpha(opacity=50);
+    background-color: white;
+    width: 600px;
+    height: 250px;
+    display:table-cell;
+    vertical-align:middle
+
+}
+
+.slideInLeft {
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+}
 
 .ParallaxContainer {
 

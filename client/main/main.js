@@ -54,7 +54,15 @@ Template.main.events({
 
 Template.cityAttractions.helpers({
 
+    getbgurl(){
+     var city = Cities.findOne(Router.current().params._id);
+        console.log(city.bgurl);
+        return city.bgurl;
+    },
+    getcity(){
+        var city = Cities.findOne(Router.current().params._id);
 
-
+        return city.name;
+    }
 
 });
