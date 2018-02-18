@@ -1,0 +1,89 @@
+<head>
+    <title>Budget Travels</title>
+</head>
+
+<body>
+
+
+
+
+
+</body>
+
+<template name="main">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><kbd>Budget</kbd> Travels</a>
+            </div>
+            <form class="navbar-form navbar-right" style="margin-top: 20px" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search Cities">
+                </div>
+            </form>
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="MainContainer">
+
+        <div class="ParallaxContainer">
+
+            <div class="loginBox">
+                <h3 style="color: white;text-shadow: 1px 1px; font-size: 25px" class="text-center"> Get started!</h3>
+                <hr>
+                <div class="row text-center">
+                    <div class="col-md-6 col-lg-6">
+                        <button class="btn btn-primary btn-lg squarebtn">Facebook</button>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <button class="btn btn-default btn-lg squarebtn">Other</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ContentContainer">
+            <div class="container" style="padding-top: 50px; font-size: 20px">
+                We see you like to travel. We see you cannot seem to plan a travel schedule. Why don't you login and get your hands on our super duper scheduling system. Or maybe you're lazy
+                and don't want to login ... that's totally fine! Browse through a selection of amazing attractions around the world (our world is 8 supported cities for now) <br><br>
+                We like lorem ipsum. Do you? <br><br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+                McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going thro
+                ugh the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum
+                " (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Ren
+                aissance. The first line of Lorem Ipsum, " <br><br>
+
+                <h3 style="margin-bottom: 20px"><i class="fa fa-globe"></i> Browse world attractions </h3>
+
+                <div class="row">
+
+                    {{#each cityList}}
+                        <div class="col-md-4 col-lg-4">
+                            {{>cityBlock}}
+                        </div>
+                    {{/each}}
+                </div>
+
+                <br><br>
+
+            </div>
+            <img src="2.png" class = "post__featured-image">
+        </div>
+    </div>
+
+</template>
+
+<template name="cityBlock">
+
+    <a class="list-group-item" style="margin-top: 5px; margin-bottom: 5px; cursor: pointer">
+        <h4 class="list-group-item-heading">{{name}}</h4>
+        <p class="list-group-item-text">{{country}}</p>
+    </a>
+
+</template>
