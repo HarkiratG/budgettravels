@@ -75,6 +75,30 @@ Meteor.methods({
         return result.data;
     },
 
+    getAttractionsWithSearchQuery(url, query) {
+        var result;
+        var resultWithSearchQuery = [];
+        try {
+            result = HTTP.call('GET', url);
+        } catch (e) {
+            // Got a network error, timeout, or HTTP error in the 400 or 500 range.
+            console.log(e);
+        }
+        // console.log(result);
+
+        var index = 0;
+        for(var i = 0; i < result.data.length; i++){
+            var str = result.data[i].fields.title;
+            var n = str.toLowerCase().search(query);
+            // console.log(n);
+            if(n >= 0){
+                resultWithSearchQuery[index] = result.data[i];
+                index++;
+            }
+        }
+        return resultWithSearchQuery;
+    },
+
     populateDb(url){
         var result;
         try {

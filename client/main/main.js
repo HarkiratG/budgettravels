@@ -56,13 +56,13 @@ Template.main.events({
 Template.cityAttractions.helpers({
 
     attractions() {
-
+        var query = $('#searchQuery').val();
         var url = 'https://cryptic-dawn-72809.herokuapp.com/list_attractions/' + Cities.findOne(Router.current().params._id).cityId;
-        Meteor.call('getAttractions', url, function (error, result) {
+        Meteor.call('getAttractionsWithSearchQuery', url, query,function (error, result) {
             if (error) {
 
             } else {
-                console.log(result);
+                // console.log(result);
 
                Session.set('result', result);
             }
@@ -87,6 +87,21 @@ Template.cityAttractions.events({
 
     'click .gohome':function(event){
 
+    },
+    'click #searchBtn':function(event){
+        event.preventDefault();
+        var query = $('#searchQuery').val();
+        var url = 'https://cryptic-dawn-72809.herokuapp.com/list_attractions/' + Cities.findOne(Router.current().params._id).cityId;
+
+        Meteor.call('getAttractionsWithSearchQuery', url, query,function (error, result) {
+            if (error) {
+
+            } else {
+                Session.set('result', result);
+            }
+        // console.log(test);
+        });
+        return Session.get('result');
     },
     'click .scheduler':function(event){
         console.log(Router.current().params._id);
