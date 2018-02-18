@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { HTTP } from 'meteor/http'
 import {Cities} from "../lib/collection";
+import {Attractions} from "../lib/collection";
 
 
 Meteor.startup(() => {
@@ -50,3 +51,36 @@ function getCities() {
        Cities.insert({name:name,country:country, cityId:cityId});
     }
 }
+
+
+
+
+Meteor.methods({
+    getAttractions(url) {
+        var result;
+        try {
+            result = HTTP.call('GET', url);
+        } catch (e) {
+            // Got a network error, timeout, or HTTP error in the 400 or 500 range.
+            console.log(e);
+        }
+        // console.log(result);
+        return result.data;
+    },
+
+    populateDb(url){
+        var result;
+        try {
+            result = HTTP.call('GET', url);
+        } catch (e) {
+            // Got a network error, timeout, or HTTP error in the 400 or 500 range.
+            console.log(e);
+        }
+
+        for(var i = 0; i < result.data.length; i++){
+            var attraction = {
+
+            }
+        }
+    }
+});
