@@ -7,7 +7,7 @@ Router.map(function(){
     });
 
     this.route('cityAttractions', {
-        path: '/cityAttraction/:_id',
+        path: '/cityattraction/:_id',
         template: 'cityAttractions'
     });
 
