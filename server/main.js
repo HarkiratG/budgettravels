@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { HTTP } from 'meteor/http'
 import {Cities} from "../lib/collection";
 import {Attractions} from "../lib/collection";
+import {Budgets} from "../lib/collection"
 
 
 Meteor.startup(() => {
@@ -52,14 +53,36 @@ function getCities() {
     }
 }
 
-
-
-
 Meteor.methods({
     getSchedule(cid,budget,days){
+        Budgets.remove({});
         var uri = "https://cryptic-dawn-72809.herokuapp.com/create_schedule/?city_id=" + cid + "&budget=" + budget + "&days=" + days;
         var response = HTTP.call( 'GET', uri, {} );
-        console.log( response );
+        var index = 1;
+        for(var i = 0; i < Object.keys(response ["data"]).length; i ++){
+            if(i % 2 != 0){
+                var str = "Day " + index;
+                index++;
+                var ResponseInJSON = JSON.parse(response ["data"][str]);
+
+                var len = Object.keys(ResponseInJSON).length;
+                console.log(len);
+                for(var j = 0; j < len; j++){
+                    var obj = {
+                        title: ResponseInJSON[j].fields.title,
+                        price: ResponseInJSON[j].fields.price,
+                        day: str
+                    };
+                    Budgets.insert(obj);
+                }
+                // var obj = {
+                //     title: ResponseInJSON[0].fields.title,
+                //     price: ResponseInJSON[0].fields.price,
+                //     day: str
+                // };
+                // Budgets.insert(obj);
+            }
+        }
         return response;
     },
 

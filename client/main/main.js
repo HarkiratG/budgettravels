@@ -73,7 +73,7 @@ Template.cityAttractions.helpers({
     },
     getbgurl(){
         var city = Cities.findOne(Router.current().params._id);
-        console.log(city.bgurl);
+        // console.log(city.bgurl);
         return city.bgurl;
     },
     getcity(){
@@ -104,7 +104,7 @@ Template.cityAttractions.events({
         return Session.get('result');
     },
     'click .scheduler':function(event){
-        console.log(Router.current().params._id);
+        // console.log(Router.current().params._id);
         Router.go('schedule', {_id:Router.current().params._id});
     }
 });
@@ -116,6 +116,24 @@ Template.schedule.helpers({
     },
     country(){
         return Cities.findOne(Router.current().params._id).country;
+    },
+    schedules(){
+        return Session.get('schedule');
+    },
+    days(){
+        var days = [];
+        var index = 0;
+        for(var i = 0; i < (2*Session.get('days')); i++){
+            if(i%2 == 0){
+                var str = "Day " + (index + 1)
+                // console.log("THE STRING IS " + str);
+                days[index] = JSON.parse(Session.get('schedule')[str]);
+            }
+        }
+
+        // console.log(days[0]);
+        // console.log(days[0][0]);
+        return days[0];
     }
 });
 
@@ -125,12 +143,25 @@ Template.schedule.events({
             if(error){
 
             }else{
-                console.log(result['data']);
+                // console.log(result['data']);
             }
         });
 
     },
     'click .generateSchedule': function(event){
+        var cid = Cities.findOne(Router.current().params._id).cityId;
 
+        Session.set('days', $('#daysInput').val());
+        console.log("CAME TO CLIENT");
+
+        Meteor.call('getSchedule',cid, $('#budgetInput').val(), $('#daysInput').val(), function(error, result){
+            if(error){
+
+            }else{
+                // console.log((result.data));
+
+                Session.set('schedule', result['data']);
+            }
+        });
     }
 });
