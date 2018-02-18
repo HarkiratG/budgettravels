@@ -4,6 +4,17 @@ import {Cities} from "../lib/collection";
 
 
 Meteor.startup(() => {
+    ServiceConfiguration.configurations.remove({
+        service: "facebook"
+    });
+
+    ServiceConfiguration.configurations.insert({
+        service: "facebook",
+        appId: '342797886216102',
+        secret: 'e5073e13cde8388d197c331f758ec8cd'
+    });
+
+
   // code to run on server at startup
 
     //populate cities db
