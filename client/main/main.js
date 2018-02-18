@@ -156,28 +156,51 @@ Template.schedule.events({
     'click .generateSchedule': function(event){
         var cid = Cities.findOne(Router.current().params._id).cityId;
 
+        var daynight ="";
+        var indoorOutdoor = "";
         Session.set('days', $('#daysInput').val());
         // console.log("CAME TO CLIENT");
 
 
-        if ($('#inlineCheckbox1').is(":checked"))
+        if ($('#indoorRadio').is(":checked"))
         {
             // it is checked
+            // alert("You clicked");
+            indoorOutdoor = "Indoor";
         }
-        if ($('#inlineCheckbox2').is(":checked"))
+        if ($('#outdoorRadio').is(":checked"))
         {
             // it is checked
+            indoorOutdoor = "Outdoor";
         }
-        if ($('#inlineCheckbox3').is(":checked"))
+        if ($('#indoorOutdoorNone').is(":checked"))
         {
             // it is checked
-        }
-        if ($('#inlineCheckbox4').is(":checked"))
-        {
-            // it is checked
+            // alert("You clicked");
+            indoorOutdoor = "None";
         }
 
-        Meteor.call('getSchedule',cid, $('#budgetInput').val(), $('#daysInput').val(), function(error, result){
+
+        if ($('#dayRadio').is(":checked"))
+        {
+            // it is checked
+            daynight = "Day";
+        }
+        if ($('#nightRadio').is(":checked"))
+        {
+            // it is checked
+            daynight = "Night";
+        }
+        if ($('#dayNightNone').is(":checked"))
+        {
+            // it is checked
+            daynight = "None";
+        }
+
+
+
+
+        Meteor.call('getSchedule',cid, $('#budgetInput').val(), $('#daysInput').val(),daynight,indoorOutdoor, function(error, result){
             if(error){
 
             }else{

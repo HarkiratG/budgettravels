@@ -59,10 +59,12 @@ Meteor.methods({
         Budgets.remove({});
     },
 
-    getSchedule(cid,budget,days){
+    getSchedule(cid,budget,days, daynight, indout){
         Budgets.remove({});
-        var uri = "https://cryptic-dawn-72809.herokuapp.com/create_schedule/?city_id=" + cid + "&budget=" + budget + "&days=" + days;
+        var uri = "https://cryptic-dawn-72809.herokuapp.com/create_schedule/?city_id=" + cid + "&budget=" + budget + "&days=" + days +
+                            "&day_night=" + daynight +  "&indoor_outdoor=" + indout;
         var response = HTTP.call( 'GET', uri, {} );
+        console.log(response);
         var index = 1;
         for(var i = 0; i < Object.keys(response ["data"]).length; i ++){
             if(i % 2 != 0){

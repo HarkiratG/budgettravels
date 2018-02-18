@@ -5,9 +5,6 @@
 <body>
 
 
-
-
-
 </body>
 
 <template name="main">
@@ -20,7 +17,9 @@
             </div>
             <form class="navbar-form navbar-right" style="margin-top: 20px" role="search">
                 {{#if currentUser}}
-                <button type="button" class="btn btn-default navbar-btn logout-btn"><i class="fa fa-sign-out"></i> Logout</button>
+                    <button type="button" class="btn btn-default navbar-btn logout-btn"><i class="fa fa-sign-out"></i>
+                        Logout
+                    </button>
                 {{/if}}
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search Cities">
@@ -35,7 +34,8 @@
 
             {{#if currentUser}}
                 <div class="loginBox">
-                    <h3 style="color: white;text-shadow: 1px 1px; font-size: 25px" class="text-center"> Hello {{username}}</h3>
+                    <h3 style="color: white;text-shadow: 1px 1px; font-size: 25px" class="text-center">
+                        Hello {{username}}</h3>
                     <hr>
                     <div class="row text-center">
                         <div class="col-md-12 col-lg-12">
@@ -46,7 +46,8 @@
 
             {{else}}
                 <div class="loginBox">
-                    <h3 style="color: white;text-shadow: 1px 1px; font-size: 25px" class="text-center"> Get started!</h3>
+                    <h3 style="color: white;text-shadow: 1px 1px; font-size: 25px" class="text-center"> Get
+                        started!</h3>
                     <hr>
                     <div class="row text-center">
                         <div class="col-md-6 col-lg-6">
@@ -62,17 +63,27 @@
 
         <div class="ContentContainer">
             <div class="container" style="padding-top: 50px; font-size: 20px">
-                We see you like to travel. We see you cannot seem to plan a travel schedule. Why don't you login and get your hands on our super duper scheduling system. Or maybe you're lazy
-                and don't want to login ... that's totally fine! Browse through a selection of amazing attractions around the world (our world is 8 supported cities for now) <br><br>
+                We see you like to travel. We see you cannot seem to plan a travel schedule. Why don't you login and get
+                your hands on our super duper scheduling system. Or maybe you're lazy
+                and don't want to login ... that's totally fine! Browse through a selection of amazing attractions
+                around the world (our world is 8 supported cities for now) <br><br>
                 We like lorem ipsum. Do you? <br><br>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
-                McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going thro
-                ugh the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum
-                " (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Ren
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the
+                leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                Aldus PageMaker including versions of Lorem Ipsum
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+                Latin literature from 45 BC, making it over 2000 years old. Richard
+                McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
+                Latin words, consectetur, from a Lorem Ipsum passage, and going thro
+                ugh the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes
+                from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum
+                " (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of
+                ethics, very popular during the Ren
                 aissance. The first line of Lorem Ipsum, " <br><br>
 
                 <h3 style="margin-bottom: 20px"><i class="fa fa-globe"></i> Browse world attractions </h3>
@@ -87,11 +98,10 @@
                 </div>
 
 
-
                 <br><br>
 
             </div>
-            <img src="2.png" class = "post__featured-image">
+            <img src="2.png" class="post__featured-image">
         </div>
     </div>
 
@@ -99,25 +109,26 @@
 
 <template name="cityBlock">
 
-    <a href = "{{pathFor route='cityAttractions' _id=this._id }}" class="list-group-item" style="margin-top: 5px; margin-bottom: 5px; cursor: pointer">
+    <a href="{{pathFor route='cityAttractions' _id=this._id }}" class="list-group-item"
+       style="margin-top: 5px; margin-bottom: 5px; cursor: pointer">
         <h4 class="list-group-item-heading">{{name}}</h4>
         <p class="list-group-item-text">{{country}}</p>
-        <img src="{{url}}"  style="float: right; margin-top: -50px" width="60px">
+        <img src="{{url}}" style="float: right; margin-top: -50px" width="60px">
     </a>
 
 </template>
 
 <template name="cityAttractions">
 
-    <img src="{{getbgurl}}" class = "caimg">
+    <img src="{{getbgurl}}" class="caimg">
     <div class="box animated slideInLeft">
         <h2 style="margin-left: 20px; color: gray; font-size: 50px">{{getcity}}</h2>
         <hr>
         <p style="margin-left: 20px; color:gray; font-size:18px">Listing all attractions</p><br><br>
         <div class="text-center">
-             <i class="fa fa-home fa-2x gohome" style="cursor: pointer; padding-right: 20px"></i>
-            <i class="fa fa-star fa-2x" style="cursor: pointer; padding-right: 20px" ></i>
-            <i class="fa fa-tasks fa-2x scheduler" style="cursor: pointer" ></i>
+            <i class="fa fa-home fa-2x gohome" style="cursor: pointer; padding-right: 20px"></i>
+            <i class="fa fa-star fa-2x" style="cursor: pointer; padding-right: 20px"></i>
+            <i class="fa fa-tasks fa-2x scheduler" style="cursor: pointer"></i>
         </div>
     </div>
 
@@ -126,14 +137,14 @@
             <strong>Listing all attractions with their prices</strong>
         </p>
         <!--<p>  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,-->
-            <!--when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the-->
-            <!--leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of-->
-            <!--Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum-->
-            <!--Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard-->
-            <!--McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going thro-->
-            <!--ugh the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum-->
-            <!--" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Ren-->
-            <!--aissance. The first line of Lorem Ipsum, "</p>-->
+        <!--when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the-->
+        <!--leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of-->
+        <!--Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum-->
+        <!--Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard-->
+        <!--McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going thro-->
+        <!--ugh the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum-->
+        <!--" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Ren-->
+        <!--aissance. The first line of Lorem Ipsum, "</p>-->
 
         <br>
         <div class="row">
@@ -141,9 +152,10 @@
                 <div class="input-group">
                     <input id="searchQuery" type="text" class="form-control" aria-label="...">
                     <div class="input-group-btn">
-                       <button id="searchBtn" type="submit" class="btn btn-warning">Search</button>
+                        <button id="searchBtn" type="submit" class="btn btn-warning">Search</button>
                     </div>
-                </div>`
+                </div>
+                `
             </div>
         </div>
 
@@ -151,14 +163,14 @@
         <div class="row">
 
             <ul class="list-group">
-            {{#each attractions}}
+                {{#each attractions}}
 
                     <li class="list-group-item">
-                    <span class="badge">$ {{this.fields.price}}</span>
-                   {{this.fields.title}}
+                        <span class="badge">$ {{this.fields.price}}</span>
+                        {{this.fields.title}}
                     </li>
 
-            {{/each}}
+                {{/each}}
             </ul>
         </div>
 
@@ -170,52 +182,63 @@
 
 
     <div class="sidebar text-center ">
-        <a  href="/" style="font-size: 25px; text-decoration: none; color: black"><kbd>Budget</kbd> Travels</a>
+        <a href="/" style="font-size: 25px; text-decoration: none; color: black"><kbd>Budget</kbd> Travels</a>
         <br><br>
-        <p>Scheduler <i class="fa fa-tasks"></i> </p>
+        <p>Scheduler <i class="fa fa-tasks"></i></p>
         <br><br><br><br><br>
 
         Scheduling attractions in
-        <a class="list-group-item" style="margin-top: 5px; margin-bottom: 5px; cursor: pointer; margin-left: 5px; margin-right: 5px">
+        <a class="list-group-item"
+           style="margin-top: 5px; margin-bottom: 5px; cursor: pointer; margin-left: 5px; margin-right: 5px">
             <h4 class="list-group-item-heading">{{name}}</h4>
             <p class="list-group-item-text">{{country}}</p>
         </a>
         <br><br>
 
-            <div class="form-group" style="margin-right: 10px; margin-left:10px">
-                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                <div class="input-group">
-                    <div class="input-group-addon">$</div>
-                    <input value="400" type="text" class="form-control" id="budgetInput" placeholder="Enter Amount">
-                    <div class="input-group-addon">.00</div>
-                </div>
+        <div class="form-group" style="margin-right: 10px; margin-left:10px">
+            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+            <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input value="400" type="text" class="form-control" id="budgetInput" placeholder="Enter Amount">
+                <div class="input-group-addon">.00</div>
             </div>
-            <div class="form-group" style="margin-right: 10px; margin-left:10px">
+        </div>
+        <div class="form-group" style="margin-right: 10px; margin-left:10px">
             <label class="sr-only" for="exampleInputDays">Days (in dollars)</label>
             <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-calendar"></i> </div>
+                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                 <input value="4" type="text" class="form-control" id="daysInput" placeholder="Enter Days">
             </div>
-            </div>
-    <br>
+        </div>
+        <br>
 
         <p>Apply filters</p>
-        <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox1" value="Indoors"> Indoors
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="indoorRadio" value="indoor"> Indoor
         </label>
-        <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox2" value="Outdoors"> Outdoors
-        </label> <br>
-        <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox3" value="Day-time"> Day-time
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="outdoorRadio" value="door"> Outdoor
         </label>
-        <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox4" value="Night-time"> Night-time
-        </label> <br>
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="indoorOutdoorNone" value="none" checked> None
+        </label>
+        <br/>
 
-        <br>
-        <div class="btn-group-vertical" role="group" aria-label="..."   style="width: 97%">
-            <button class="btn btn-default generateSchedule" style="background-color: black;color: white">Generate Schedule</button>
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions1" id="dayRadio" value="day"> Day
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions1" id="nightRadio" value="night"> Night
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions1" id="dayNightNone" value="none" checked> None
+        </label>
+
+        <br/><br/>
+        <div class="btn-group-vertical" role="group" aria-label="..." style="width: 97%">
+            <button class="btn btn-default generateSchedule" style="background-color: black;color: white">Generate
+                Schedule
+            </button>
             <a href="/" class="btn btn-default clearDB">Home</a>
         </div>
 
@@ -225,25 +248,26 @@
     <div class="results text-center">
 
         <div class="row ">
-        {{#each getDays}}
+            {{#each getDays}}
 
-            <div class=" col-md-12 col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading" style="background-color: black; color: white">
-                    <h3 class="panel-title">{{day}}</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">{{title}}</h4>
-                            <p class="list-group-item-text" style="float: right; margin-top: -25px">  <span class="badge">$ {{price}}</span></p>
-                        </a>
+                <div class=" col-md-12 col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color: black; color: white">
+                            <h3 class="panel-title">{{day}}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading">{{title}}</h4>
+                                    <p class="list-group-item-text" style="float: right; margin-top: -25px"><span
+                                            class="badge">$ {{price}}</span></p>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            </div>
-        {{/each}}
+                </div>
+            {{/each}}
         </div>
     </div>
 
