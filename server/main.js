@@ -56,8 +56,9 @@ function getCities() {
 
 
 Meteor.methods({
-    getSchedule(){
-        var response = HTTP.call( 'GET', 'https://cryptic-dawn-72809.herokuapp.com/list_attractions/7/', {} );
+    getSchedule(cid,budget,days){
+        var uri = "https://cryptic-dawn-72809.herokuapp.com/create_schedule/?city_id=" + cid + "&budget=" + budget + "&days=" + days;
+        var response = HTTP.call( 'GET', uri, {} );
         console.log( response );
         return response;
     },
