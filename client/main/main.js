@@ -157,7 +157,25 @@ Template.schedule.events({
         var cid = Cities.findOne(Router.current().params._id).cityId;
 
         Session.set('days', $('#daysInput').val());
-        console.log("CAME TO CLIENT");
+        // console.log("CAME TO CLIENT");
+
+
+        if ($('#inlineCheckbox1').is(":checked"))
+        {
+            // it is checked
+        }
+        if ($('#inlineCheckbox2').is(":checked"))
+        {
+            // it is checked
+        }
+        if ($('#inlineCheckbox3').is(":checked"))
+        {
+            // it is checked
+        }
+        if ($('#inlineCheckbox4').is(":checked"))
+        {
+            // it is checked
+        }
 
         Meteor.call('getSchedule',cid, $('#budgetInput').val(), $('#daysInput').val(), function(error, result){
             if(error){
