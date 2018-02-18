@@ -36,6 +36,18 @@ Template.main.events({
                     console.log("something went wrong with facebook login at line 32");
                 }
             });
+    },
+
+    'click .logout-btn':function(event){
+        event.preventDefault();
+
+        Meteor.logout(function(err){
+            if(err){
+                console.log(err.reason);
+            } else {
+                Router.go("/");
+            }
+        })
     }
 
 });
