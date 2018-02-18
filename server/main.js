@@ -54,6 +54,11 @@ function getCities() {
 }
 
 Meteor.methods({
+
+    ddb(){
+        Budgets.remove({});
+    },
+
     getSchedule(cid,budget,days){
         Budgets.remove({});
         var uri = "https://cryptic-dawn-72809.herokuapp.com/create_schedule/?city_id=" + cid + "&budget=" + budget + "&days=" + days;

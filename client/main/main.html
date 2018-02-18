@@ -199,21 +199,36 @@
             </div>
     <br>
         <div class="btn-group-vertical" role="group" aria-label="..."   style="width: 97%">
-            <button class="btn btn-info generateSchedule">Generate Schedule</button>
-            <a href="/" class="btn btn-default">Home</a>
+            <button class="btn btn-default generateSchedule" style="background-color: black;color: white">Generate Schedule</button>
+            <a href="/" class="btn btn-default clearDB">Home</a>
         </div>
 
 
     </div>
 
     <div class="results text-center">
-        <ul class="list-group">
-            <!--{{#each days}}-->
-                <!--title: {{this.fields.title}} <br />-->
-                <!--price: {{this.fields.price}}-->
-            <!--{{/each}}-->
 
-        </ul>
+        <div class="row ">
+        {{#each getDays}}
+
+            <div class=" col-md-12 col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: black; color: white">
+                    <h3 class="panel-title">{{day}}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">{{title}}</h4>
+                            <p class="list-group-item-text" style="float: right; margin-top: -25px">  <span class="badge">$ {{price}}</span></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        {{/each}}
+        </div>
     </div>
 
 </template>

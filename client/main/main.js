@@ -1,5 +1,6 @@
 import {Template} from 'meteor/templating';
 import {Cities} from "../../lib/collection";
+import {Budgets} from "../../lib/collection";
 
 import './main.html';
 import {HTTP} from "meteor/http";
@@ -134,7 +135,11 @@ Template.schedule.helpers({
         // console.log(days[0]);
         // console.log(days[0][0]);
         return days[0];
+    },
+    getDays(){
+        return Budgets.find({});
     }
+
 });
 
 Template.schedule.events({
@@ -163,5 +168,8 @@ Template.schedule.events({
                 Session.set('schedule', result['data']);
             }
         });
+    },
+    'click .clearDB':function(){
+       Meteor.call('ddb');
     }
 });
