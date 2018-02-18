@@ -8,6 +8,7 @@ import './main.html';
 Template.main.onCreated(function helloOnCreated() {
   // counter starts at 0
     Session.set("tmp",0);
+
 });
 
 Template.main.helpers({
@@ -65,4 +66,30 @@ Template.cityAttractions.helpers({
         return city.name;
     }
 
+});
+
+Template.cityAttractions.events({
+
+   'click .gohome':function(event){
+
+   }
+});
+
+Template.schedule.helpers({
+
+
+
+});
+
+Template.schedule.events({
+'click .testbtn': function (event) {
+    Meteor.call('getSchedule', function(error, result){
+        if(error){
+
+        }else{
+          console.log(result['data']);
+        }
+    });
+
+}
 });

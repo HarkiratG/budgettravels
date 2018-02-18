@@ -11,4 +11,9 @@ Router.map(function(){
         template: 'cityAttractions'
     });
 
+    this.route('schedule', {
+        path: '/schedule/',
+        template: 'schedule'
+    });
+
 });

@@ -50,7 +50,6 @@
 
     position: absolute;
     top: 130px;
-
     opacity: 0.7;
     filter: alpha(opacity=50);
     background-color: white;
@@ -59,6 +58,33 @@
     display:table-cell;
     vertical-align:middle
 
+}
+
+.border-shadow-left{
+    border-left: 1px solid #dbd8cf;
+    background: linear-gradient(left, #eee  0%, #fff 10%);
+    background: -ms-linear-gradient(left, #eee  0%,#fff 10%);
+    background: -moz-linear-gradient(left, #eee  0%,#fff 10%);
+    background: -webkit-linear-gradient(left, #eee  0%, #fff 10%);
+    box-shadow: -44px 120px 80px -72px #fff inset, -44px -120px 80px -72px #fff inset;
+    min-height: 400px;
+}
+
+.sidebar{
+
+    border-right: gray 1px solid;
+    position: fixed;
+    width: 320px;
+    height: 900px;
+    margin-top: 50px;
+
+}
+
+.results{
+    margin-left: 330px;
+    margin-top: 60px;
+    margin-right: 10px;
+    position: absolute;
 }
 
 .slideInLeft {

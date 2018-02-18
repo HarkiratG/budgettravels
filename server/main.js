@@ -50,3 +50,13 @@ function getCities() {
        Cities.insert({name:name,country:country, cityId:cityId});
     }
 }
+
+Meteor.methods({
+
+    getSchedule(){
+        var response = HTTP.call( 'GET', 'https://cryptic-dawn-72809.herokuapp.com/list_attractions/7/', {} );
+        console.log( response );
+        return response;
+    }
+
+});
