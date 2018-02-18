@@ -12,7 +12,7 @@ Router.map(function(){
     });
 
     this.route('schedule', {
-        path: '/schedule/',
+        path: '/schedule/:_id',
         template: 'schedule'
     });
 

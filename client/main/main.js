@@ -87,13 +87,21 @@ Template.cityAttractions.events({
 
     'click .gohome':function(event){
 
+    },
+    'click .scheduler':function(event){
+        console.log(Router.current().params._id);
+        Router.go('schedule', {_id:Router.current().params._id});
     }
 });
 
 Template.schedule.helpers({
 
-
-
+    name(){
+        return Cities.findOne(Router.current().params._id).name;
+    },
+    country(){
+        return Cities.findOne(Router.current().params._id).country;
+    }
 });
 
 Template.schedule.events({
@@ -106,5 +114,8 @@ Template.schedule.events({
             }
         });
 
+    },
+    'click .generateSchedule': function(event){
+        
     }
 });
