@@ -25,3 +25,10 @@ Template.main.events({
     Session.set("tmp",Session.get("tmp") + 1);
   },
 });
+
+Template.cityAttractions.helpers({
+
+
+
+
+});

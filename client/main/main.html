@@ -81,7 +81,7 @@
 
 <template name="cityBlock">
 
-    <a class="list-group-item" style="margin-top: 5px; margin-bottom: 5px; cursor: pointer">
+    <a href = "{{pathFor route='cityAttractions' _id=this.cityId }}" class="list-group-item" style="margin-top: 5px; margin-bottom: 5px; cursor: pointer">
         <h4 class="list-group-item-heading">{{name}}</h4>
         <p class="list-group-item-text">{{country}}</p>
         <img src="{{url}}"  style="float: right; margin-top: -50px" width="60px">
