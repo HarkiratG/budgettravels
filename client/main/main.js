@@ -16,6 +16,10 @@ Template.main.helpers({
   },
     cityList(){
     return Cities.find({});
+    },
+    username(){
+   return Meteor.user().profile.name;
+     //return Meteor.user();
     }
 });
 
