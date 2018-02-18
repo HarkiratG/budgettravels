@@ -1,8 +1,8 @@
-import { Template } from 'meteor/templating';
+import {Template} from 'meteor/templating';
 import {Cities} from "../../lib/collection";
 
 import './main.html';
-
+import {HTTP} from "meteor/http";
 
 
 Template.main.onCreated(function helloOnCreated() {
@@ -55,8 +55,24 @@ Template.main.events({
 
 Template.cityAttractions.helpers({
 
+    attractions() {
+
+        var url = 'https://cryptic-dawn-72809.herokuapp.com/list_attractions/' + Cities.findOne(Router.current().params._id).cityId;
+        Meteor.call('getAttractions', url, function (error, result) {
+            if (error) {
+
+            } else {
+                console.log(result);
+
+               Session.set('result', result);
+            }
+        });
+
+
+        return Session.get('result');
+    },
     getbgurl(){
-     var city = Cities.findOne(Router.current().params._id);
+        var city = Cities.findOne(Router.current().params._id);
         console.log(city.bgurl);
         return city.bgurl;
     },
@@ -65,14 +81,13 @@ Template.cityAttractions.helpers({
 
         return city.name;
     }
-
 });
 
 Template.cityAttractions.events({
 
-   'click .gohome':function(event){
+    'click .gohome':function(event){
 
-   }
+    }
 });
 
 Template.schedule.helpers({
@@ -82,14 +97,14 @@ Template.schedule.helpers({
 });
 
 Template.schedule.events({
-'click .testbtn': function (event) {
-    Meteor.call('getSchedule', function(error, result){
-        if(error){
+    'click .testbtn': function (event) {
+        Meteor.call('getSchedule', function(error, result){
+            if(error){
 
-        }else{
-          console.log(result['data']);
-        }
-    });
+            }else{
+                console.log(result['data']);
+            }
+        });
 
-}
+    }
 });
